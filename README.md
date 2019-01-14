@@ -1,2 +1,0 @@
-# NewBell
-Created with CodeSandbox
