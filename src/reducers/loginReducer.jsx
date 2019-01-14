@@ -2,7 +2,7 @@ import { LOG_IN } from "../constants/actionsTypes";
 import { LOG_OUT } from "../constants/actionsTypes";
 
 const initialState = {
-  isLoggedIn: true
+  isLoggedIn: false
 };
 
 export default function loginReducer(state = initialState, action) {

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addOrganization } from "../actions/actions";
 import { deleteOrganization } from "../actions/actions";
 import { changeOrganization } from "../actions/actions";
+import { logOut } from "../actions/actions";
 import ModalConfirm from "../components/ModalConfirm";
 import ModalInputOrg from "../components/ModalInputOrg";
 
@@ -38,7 +39,7 @@ class Organization extends React.Component {
     this.openInputModal();
   }
   closeInputModal() {
-    this.setState({ ModalInputOrgIsOpen: false });
+    this.setState({ ModalInputOrgIsOpen: false, onChanged: false });
   }
   openInputModal() {
     this.setState({ ModalInputOrgIsOpen: true });
@@ -82,6 +83,7 @@ class Organization extends React.Component {
                   marginLeft: "-5rem"
                 }}
                 title="Exit"
+                onClick={this.props.logOut}
               >
                 LogOut
               </button>
@@ -181,7 +183,8 @@ function mapDispatchToProps(dispatch) {
   return {
     addOrg: data => dispatch(addOrganization(data)),
     delOrg: data => dispatch(deleteOrganization(data)),
-    changeOrg: data => dispatch(changeOrganization(data))
+    changeOrg: data => dispatch(changeOrganization(data)),
+    logOut: () => dispatch(logOut())
   };
 }
 

@@ -62,7 +62,7 @@ export default class ModalInputOrg extends React.Component {
               ID
               <br />
               <input
-                defaultValue={this.state.id}
+                defaultValue={!this.props.onChanged ? null : this.state.id}
                 type="text"
                 name="id"
                 onChange={this.handleChange}
@@ -72,7 +72,7 @@ export default class ModalInputOrg extends React.Component {
               Title
               <br />
               <input
-                defaultValue={this.state.title}
+                defaultValue={!this.props.onChanged ? null : this.state.title}
                 type="text"
                 name="title"
                 onChange={this.handleChange}
@@ -82,7 +82,7 @@ export default class ModalInputOrg extends React.Component {
               Adress
               <br />
               <input
-                defaultValue={this.state.address}
+                defaultValue={!this.props.onChanged ? null : this.state.address}
                 type="text"
                 name="address"
                 onChange={this.handleChange}
@@ -92,7 +92,7 @@ export default class ModalInputOrg extends React.Component {
               INN
               <br />
               <input
-                defaultValue={this.state.inn}
+                defaultValue={!this.props.onChanged ? null : this.state.inn}
                 type="text"
                 name="inn"
                 onChange={this.handleChange}
